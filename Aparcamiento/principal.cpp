@@ -16,9 +16,12 @@
  * =====================================================================================
  */
 #include <stdio.h>
+#include "garaje.h"
 
 
 int main()  {
-
+    TipoGaraje garaje;
+    garaje.IniciarGaraje();
+    garaje.ImprimirGaraje();
 }
 

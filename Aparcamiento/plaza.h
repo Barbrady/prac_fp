@@ -20,13 +20,14 @@
 typedef enum TipoEstado  {
     libre, ocupada};
 typedef enum TipoTamanio {
-    grande, pequeña};
+    grande, pequenia};
 
 typedef struct TipoPlazaGaraje  {
     int numero;
     TipoEstado estado;
     TipoTamanio tamanio;
     void OcuparPlaza();
-    void LiberarPaza();
+    void LiberarPlaza();
     bool EstadoPlaza();
-}
+    void ImprimirPlaza();
+};
