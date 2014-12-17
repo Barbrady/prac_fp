@@ -18,19 +18,27 @@
 #include <stdio.h>
 #include "garaje.h"
 
-int TipoGaraje::PlazasLibres()  {
+bool TipoGaraje::PlazasLibres(TipoTamanio t)  {
     int contador = 0;
-    for(int i=0; i<G_PLAZAS; i++)  {
-        if(plaza[i].EstadoPlaza())  {
+    for(int i=0; i<N_PLAZAS; i++)  {
+        if(plaza[i].EstadoPlaza() && plaza[i].tamanio == t)  {
             contador++;
         }
     }
-    return contador;
+    if((contador == 15) && (t == pequenia)) {
+        return true;
+    }
+    else if((contador == 10) && (t == grande))  {
+        return true;
+    }
+    else{
+        return false;
+    }
 }
 
 int TipoGaraje::PlazasOcupadas()  {
     int contador = 0;
-    for(int i=0; i<G_PLAZAS; i++)  {
+    for(int i=0; i<N_PLAZAS; i++)  {
         if(!plaza[i].EstadoPlaza())  {
             contador++;
         }
@@ -39,23 +47,38 @@ int TipoGaraje::PlazasOcupadas()  {
 }
 
 void TipoGaraje::IniciarGaraje()  {
-    for(int i=0; i<G_PLAZAS; i++)  {
-        plaza[i].numero = i+1;
+    for(int i=0; i<N_PLAZAS; i++)  {
         plaza[i].estado = libre;
-        if(i<10)  {
+        if(i<PLAZAS_G)  {
             plaza[i].tamanio = grande;
+            plaza[i].numero = i+1;
         }
         else  {
             plaza[i].tamanio = pequenia;
+            plaza[i].numero = (i+1)-10;
         }
     }
 }
 
 void TipoGaraje::ImprimirGaraje()  {
-    for(int i=0; i<G_PLAZAS; i++)  {
+    for(int i=0; i<N_PLAZAS; i++)  {
         plaza[i].ImprimirPlaza();
         if(i == 9)  {
             printf("\n");
+            printf("\n");
         }
     }
+}
+
+void TipoGaraje::AparcarCoche(TipoTamanio t)  {
+    if((t == pequenia) && PlazasLibres(t))  {
+        int i = 0;
+        while(!plaza[i].EstadoPlaza())  {
+            i++;
+        }
+        plaza[i].OcuparPlaza();
+    }
+}
+
+void TipoGaraje::SacarCoche(int n, TipoTamanio t)  {
 }

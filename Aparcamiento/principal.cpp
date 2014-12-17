@@ -18,18 +18,27 @@
 #include <stdio.h>
 #include "garaje.h"
 
-void Menu()  {
+void Opciones()  {
     printf("Introduzca una opción: \n");
     printf("Imprimir garaje: (I)\n");
     printf("Entrada:         (P/G)\n");
     printf("Salida:          (S)\n");
+    printf("Finalizar:       (F)\n");
 }
+
 
 int main()  {
     TipoGaraje garaje;
     garaje.IniciarGaraje();
-    Menu();
-    //garaje.ImprimirGaraje();
+    char c;
+    //printf("Hay %d plazas vacías:\n",garaje.PlazasLibres());
+    //do  {
+    //    Opciones();
+    //    scanf("%c",&c);
+    //    }
+    garaje.AparcarCoche(grande);
+    garaje.AparcarCoche(pequenia);
+    garaje.ImprimirGaraje();
 
 
 }

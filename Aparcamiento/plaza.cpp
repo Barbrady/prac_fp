@@ -43,4 +43,10 @@ void TipoPlazaGaraje::ImprimirPlaza()  {
         printf("P");
     }
     printf("%d",numero);
+    if(estado == libre)  {
+        printf("L--");
+    }
+    else  {
+        printf("O--");
+    }
 }

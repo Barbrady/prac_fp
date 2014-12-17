@@ -18,12 +18,17 @@
 #pragma once
 #include "plaza.h"
 
-const int G_PLAZAS = 25;
-typedef TipoPlazaGaraje PlazasGaraje[G_PLAZAS];
+const int PLAZAS_G = 10;
+const int PLAZAS_P = 15;
+const int N_PLAZAS = PLAZAS_G + PLAZAS_P;
+
+typedef TipoPlazaGaraje PlazasGaraje[N_PLAZAS];
 typedef struct TipoGaraje  {
     PlazasGaraje plaza;
-    int PlazasLibres();
+    bool PlazasLibres(TipoTamanio t);
     int PlazasOcupadas();
     void IniciarGaraje();
     void ImprimirGaraje();
+    void AparcarCoche(TipoTamanio t);
+    void SacarCoche(int n, TipoTamanio t); 
 };
