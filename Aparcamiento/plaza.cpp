@@ -36,17 +36,17 @@ bool TipoPlazaGaraje::EstadoPlaza()  {
 }
 
 void TipoPlazaGaraje::ImprimirPlaza()  {
+    if(estado == libre)  {
+        printf("L");
+    }
+    else  {
+        printf("O");
+    }
     if(tamanio == grande)  {
         printf("G");
     }
     else  {
         printf("P");
     }
-    printf("%d",numero);
-    if(estado == libre)  {
-        printf("L--");
-    }
-    else  {
-        printf("O--");
-    }
+    printf("%d  ",numero);
 }

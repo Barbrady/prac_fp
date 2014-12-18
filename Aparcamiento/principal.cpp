@@ -26,20 +26,31 @@ void Opciones()  {
     printf("Finalizar:       (F)\n");
 }
 
+void Acciones(char c, TipoGaraje &garaje)  {
+    switch (c)  {
+        case 'i':
+        case 'I':
+            garaje.ImprimirGaraje();
+            break;
+        case 'p':
+        case 'P':
+            garaje.AparcarCoche(pequenia);
+            break;
+        case 'g':
+        case 'G':
+            garaje.AparcarCoche(grande);
+            break;
+    }
+}
 
 int main()  {
     TipoGaraje garaje;
     garaje.IniciarGaraje();
-    char c;
-    //printf("Hay %d plazas vacías:\n",garaje.PlazasLibres());
-    //do  {
-    //    Opciones();
-    //    scanf("%c",&c);
-    //    }
-    garaje.AparcarCoche(grande);
-    garaje.AparcarCoche(pequenia);
-    garaje.ImprimirGaraje();
-
-
+    char c = ' ';
+    while(c != 'f')  {
+        Opciones();
+        scanf("%c",&c);
+        Acciones(c,garaje);
+        }
 }
 

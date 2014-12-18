@@ -18,6 +18,14 @@
 #include <stdio.h>
 #include "garaje.h"
 
+int TipoGaraje::PrimeraPlazaLibre(TipoTamanio t)  {
+    for(int i=0; i<N_PLAZAS; i++)  {
+        if((plaza[i].EstadoPlaza()) && (plaza[i].tamanio == t))  {
+                return i;
+        }
+    }
+}
+
 bool TipoGaraje::PlazasLibres(TipoTamanio t)  {
     int contador = 0;
     for(int i=0; i<N_PLAZAS; i++)  {
@@ -25,10 +33,7 @@ bool TipoGaraje::PlazasLibres(TipoTamanio t)  {
             contador++;
         }
     }
-    if((contador == 15) && (t == pequenia)) {
-        return true;
-    }
-    else if((contador == 10) && (t == grande))  {
+    if(contador>0) {
         return true;
     }
     else{
@@ -70,13 +75,13 @@ void TipoGaraje::ImprimirGaraje()  {
     }
 }
 
-void TipoGaraje::AparcarCoche(TipoTamanio t)  {
-    if((t == pequenia) && PlazasLibres(t))  {
-        int i = 0;
-        while(!plaza[i].EstadoPlaza())  {
-            i++;
-        }
-        plaza[i].OcuparPlaza();
+void TipoGaraje::AparcarCoche(TipoTamanio t) {
+    if(PlazasLibres(t)) {
+        printf("Primera plaza libre = %d\n",PrimeraPlazaLibre(t));
+        plaza[PrimeraPlazaLibre(t)].OcuparPlaza();
+    }
+    else{
+        printf("No quedan plazas libres para el tipo de vehículo indicado.\n");
     }
 }
 
