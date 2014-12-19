@@ -1,0 +1,18 @@
+In file included from garaje.h:19:0,
+                 from principal.cpp:19:
+plaza.h:21:19: warning: ‘typedef’ was ignored in this declaration [enabled by default]
+plaza.h:23:21: warning: ‘typedef’ was ignored in this declaration [enabled by default]
+plaza.h:33:1: warning: ‘typedef’ was ignored in this declaration [enabled by default]
+In file included from principal.cpp:19:0:
+garaje.h:35:1: warning: ‘typedef’ was ignored in this declaration [enabled by default]
+In file included from garaje.h:19:0,
+                 from garaje.cpp:19:
+plaza.h:21:19: warning: ‘typedef’ was ignored in this declaration [enabled by default]
+plaza.h:23:21: warning: ‘typedef’ was ignored in this declaration [enabled by default]
+plaza.h:33:1: warning: ‘typedef’ was ignored in this declaration [enabled by default]
+In file included from garaje.cpp:19:0:
+garaje.h:35:1: warning: ‘typedef’ was ignored in this declaration [enabled by default]
+In file included from plaza.cpp:19:0:
+plaza.h:21:19: warning: ‘typedef’ was ignored in this declaration [enabled by default]
+plaza.h:23:21: warning: ‘typedef’ was ignored in this declaration [enabled by default]
+plaza.h:33:1: warning: ‘typedef’ was ignored in this declaration [enabled by default]
