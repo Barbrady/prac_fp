@@ -30,6 +30,6 @@ typedef struct TipoGaraje  {
     void IniciarGaraje();
     void ImprimirGaraje();
     void AparcarCoche(TipoTamanio t);
-    void SacarCoche(int n, TipoTamanio t);
+    void SacarCoche(int n, char c);
     int PrimeraPlazaLibre(TipoTamanio t);
 };

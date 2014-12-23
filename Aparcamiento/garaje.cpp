@@ -80,10 +80,20 @@ void TipoGaraje::AparcarCoche(TipoTamanio t) {
         printf("Primera plaza libre = %d\n",PrimeraPlazaLibre(t));
         plaza[PrimeraPlazaLibre(t)].OcuparPlaza();
     }
+    else if((t == pequenia) && PlazasLibres(grande))  {
+        plaza[PrimeraPlazaLibre(grande)].OcuparPlaza();
+        printf("Se ha tenido que introducir un coche pequeño en plaza grande.\n");
+    }
     else{
         printf("No quedan plazas libres para el tipo de vehículo indicado.\n");
     }
 }
 
-void TipoGaraje::SacarCoche(int n, TipoTamanio t)  {
+void TipoGaraje::SacarCoche(int n, char c)  {
+    if(c == 'p' || c == 'P')  {
+        plaza[n+9].LiberarPlaza();
+    }
+    if(c == 'g' || c == 'G') {
+        plaza[n-1].LiberarPlaza();
+    }
 }
