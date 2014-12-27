@@ -9,7 +9,7 @@ int main( int argc, char *argv[])  {
 	if( (fd = open( argv[1], O_RDWR )) ==-1 )
 	{
 		perror( "open" );
-		exit(-1);
+		//exit( -1 );
 	}
 	printf("El fichero abierto tiene el descriptor %d.\n",fd);
 	close(fd);
