@@ -14,8 +14,8 @@ char* Cadena(int i)  {
 
 int main()  {
 	TipoNuevo * e;
-	TipoNuevo b;
-	e = &b;
+	e = new TipoNuevo;
+	//e = &b;
 	//char* s;
 	//int i;
 	//i=2;
