@@ -11,6 +11,7 @@ int main( int argc, char *argv[])  {
 		perror( "open" );
 		//exit( -1 );
 	}
+	printf("\n\n%s\n\n",argv[0]);
 	printf("El fichero abierto tiene el descriptor %d.\n",fd);
 	close(fd);
 	return 0;
