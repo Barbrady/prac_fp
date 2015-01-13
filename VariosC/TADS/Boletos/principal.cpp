@@ -4,5 +4,6 @@
 int main()  {
 	TipoBoleto boleto;
 	boleto.NuevoBoleto();
+	boleto.OrdenaBoleto();
 	boleto.ImprimirBoleto();
 }
