@@ -6,4 +6,5 @@ int main()  {
 	boleto.NuevoBoleto();
 	boleto.OrdenaBoleto();
 	boleto.ImprimirBoleto();
+	boleto.I;
 }
